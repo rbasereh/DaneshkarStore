@@ -17,7 +17,7 @@ public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, L
     {
         var query = _dbContext.Product.AsQueryable();
 
-        if (string.IsNullOrEmpty(request.Name))
+        if (!string.IsNullOrEmpty(request.Name))
             query = query.Where(e => e.Name.Contains(request.Name));
 
         if (request.Status.HasValue)
