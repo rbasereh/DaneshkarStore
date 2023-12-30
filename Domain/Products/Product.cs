@@ -9,8 +9,11 @@ namespace Domain.Products
     public class Product
     {
         public int Id { get; set; }
-        public int Name { get; set; }
+        public string Name { get; set; }
         public decimal Price { get; set; }
+        //todo:Move to ProductStore
+        public int Count { get; set; }
         public ProductStatus Status { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
 }
